@@ -1,6 +1,12 @@
 *.log
 *.pot
-*.pyc
+*.py[cod]
 local_settings.py
 /.idea
 /*.iml
+/static/app/bower_components/
+/static/node_modules
+/static/dist
+.tmp
+.sass-cache
+
