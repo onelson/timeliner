@@ -4,9 +4,11 @@
 local_settings.py
 /.idea
 /*.iml
+/static/app/scripts/**/*.js
+/static/app/scripts/*.js
 /static/app/bower_components/
 /static/node_modules
 /static/dist
 .tmp
 .sass-cache
-
+.coffee_history_test

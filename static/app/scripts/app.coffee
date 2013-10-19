@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('staticApp', [])
+angular.module('Timeliner', [])
   .config ($routeProvider) ->
     $routeProvider
       .when '/',

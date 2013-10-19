@@ -9,7 +9,6 @@
     "angular-cookies": "~1.0.7",
     "angular-sanitize": "~1.0.7",
     "twitter": "~3.0.0",
-    "coffee-script": "~1.6.3",
     "less.js": "~1.4.2",
     "grunt": "~0.4.1"
   },

@@ -7,7 +7,7 @@ from django.conf.urls import patterns, include, url
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'timelner.views.home', name='home'),
-    # url(r'^timelner/', include('timelner.foo.urls')),
+    url(r'^', 'timeliner.core.views.ng_app'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
