@@ -13,6 +13,12 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <link rel="stylesheet" href="{% static "app/styles/main.css" %}">
 
+
+  {% if DEBUG %}
+    <link rel="stylesheet/less" href="{% static "less/main.less" %}">
+    <script src="{% static "app/bower_components/less.js/dist/less-1.4.2.min.js" %}"></script>
+  {% endif %}
+
   <base href="{% static 'app/' %}" />
 </head>
 <body ng-app="Timeliner">

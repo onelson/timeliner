@@ -1,5 +1,5 @@
 {
-  "name": "static",
+  "name": "timeliner",
   "version": "0.0.0",
   "dependencies": {},
   "devDependencies": {
@@ -26,7 +26,10 @@
     "connect-livereload": "~0.2.0",
     "grunt-google-cdn": "~0.2.0",
     "grunt-ngmin": "~0.0.2",
-    "time-grunt": "~0.1.0"
+    "time-grunt": "~0.1.0",
+    "grunt-contrib-less": "~0.7.0",
+    "less": "~1.4.2",
+    "coffee-script": "~1.6.3"
   },
   "engines": {
     "node": ">=0.8.0"

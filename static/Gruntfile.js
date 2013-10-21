@@ -16,6 +16,8 @@ module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt);
   require('time-grunt')(grunt);
 
+  grunt.loadNpmTasks('grunt-contrib-less');
+
   // configurable paths
   var yeomanConfig = {
     app: 'app',
