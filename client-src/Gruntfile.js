@@ -32,7 +32,6 @@ module.exports = function (grunt) {
       development: {
         options: {
           cleancss: true,
-          report: 'gzip',
           paths: ['<%= yeoman.app %>/styles/', '<%= yeoman.app %>/components/twitter/less/']
         },
         files: {
@@ -50,7 +49,7 @@ module.exports = function (grunt) {
         tasks: ['coffee:test']
       },
       styles: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.{less,css}'],
+        files: ['<%= yeoman.app %>/styles/{,*/}*.less'],
         tasks: ['less', 'copy:styles', 'autoprefixer']
       },
 //      styles: {
