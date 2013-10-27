@@ -1,4 +1,4 @@
-// Generated on 2013-10-17 using generator-angular 0.4.0
+// Generated on 2013-10-27 using generator-angular 0.4.0
 'use strict';
 var LIVERELOAD_PORT = 35729;
 var lrSnippet = require('connect-livereload')({ port: LIVERELOAD_PORT });
@@ -16,8 +16,6 @@ module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt);
   require('time-grunt')(grunt);
 
-  grunt.loadNpmTasks('grunt-contrib-less');
-
   // configurable paths
   var yeomanConfig = {
     app: 'app',
@@ -30,6 +28,18 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     yeoman: yeomanConfig,
+    less: {
+      development: {
+        options: {
+          cleancss: true,
+          report: 'gzip',
+          paths: ['<%= yeoman.app %>/styles/', '<%= yeoman.app %>/components/twitter/less/']
+        },
+        files: {
+          '<%= yeoman.app %>/styles/main.css': '<%= yeoman.app %>/styles/main.less'
+        }
+      }
+    },
     watch: {
       coffee: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
@@ -40,9 +50,13 @@ module.exports = function (grunt) {
         tasks: ['coffee:test']
       },
       styles: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-        tasks: ['copy:styles', 'autoprefixer']
+        files: ['<%= yeoman.app %>/styles/{,*/}*.{less,css}'],
+        tasks: ['less', 'copy:styles', 'autoprefixer']
       },
+//      styles: {
+//        files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
+//        tasks: ['copy:styles', 'autoprefixer']
+//      },
       livereload: {
         options: {
           livereload: LIVERELOAD_PORT
@@ -249,7 +263,7 @@ module.exports = function (grunt) {
           src: [
             '*.{ico,png,txt}',
             '.htaccess',
-            'bower_components/**/*',
+            'components/**/*',
             'images/{,*/}*.{gif,webp}',
             'styles/fonts/*'
           ]
@@ -343,6 +357,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'less',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',

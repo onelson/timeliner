@@ -4,11 +4,14 @@
 local_settings.py
 /.idea
 /*.iml
-/static/app/scripts/**/*.js
-/static/app/scripts/*.js
-/static/app/bower_components/
-/static/node_modules
-/static/dist
+/client-src/app/components
+/client-src/node_modules
+/client-src/dist
+# the main.css is ignored because it's compiled from main.less
+/client-src/app/styles/main.css
 .tmp
 .sass-cache
 .coffee_history_test
+
+
+

@@ -75,7 +75,12 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    proj('static'),
+
+    # development
+    proj('client-src'),
+
+    # release
+    # proj('client-src', 'dist'),
 )
 
 # List of finder classes that know how to find static files in
@@ -115,7 +120,16 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    proj('timeliner/templates')
+
+    # during releases, we'll want to copy index.html from
+    # client-src/app/dist to this top-level templates dir (so it will
+    # override all others). Please ensure template-override/index.html is not
+    # present during development or your changes will not be reflected
+    proj('template-override'),
+    # where the index.html for the angular app lives
+    proj('client-src/app'),
+    # traditional django templates in here
+    proj('timeliner/templates'),
 )
 
 INSTALLED_APPS = (
