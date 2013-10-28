@@ -1,4 +1,17 @@
 *.log
 *.pot
-*.pyc
+*.py[cod]
 local_settings.py
+/.idea
+/*.iml
+/client-src/app/components
+/client-src/node_modules
+/client-src/dist
+# the main.css is ignored because it's compiled from main.less
+/client-src/app/styles/main.css
+.tmp
+.sass-cache
+.coffee_history_test
+
+
+
