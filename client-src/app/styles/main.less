@@ -1,8 +1,31 @@
 @import '../components/bootstrap/less/bootstrap.less';
 // override the url prefix for the icons
-@icon-font-path:          "../components/bootstrap/dist/fonts/";
+@icon-font-path: "../components/bootstrap/dist/fonts/";
 
-viewport {
-  background: #fafafa;
-  color: #333;
+#content {
+  padding: 0 15px;
+
+  .container {
+    width: 100%;
+
+    sidebar {
+      background-color: #a6ae96;
+      top:0px;
+      left:0px;
+      bottom:0px;
+      position:absolute;
+      width: 220px;
+      padding-left: @grid-gutter-width;
+    }
+
+    viewport {
+      background: #f6f3cf;
+      color: #333;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+    }
+  }
 }
