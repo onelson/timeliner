@@ -32,7 +32,7 @@ module.exports = function (grunt) {
       development: {
         options: {
           cleancss: true,
-          paths: ['<%= yeoman.app %>/styles/', '<%= yeoman.app %>/components/twitter/less/']
+          paths: ['<%= yeoman.app %>/styles/']
         },
         files: {
           '<%= yeoman.app %>/styles/main.css': '<%= yeoman.app %>/styles/main.less'

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('timelinerApp', ['ngRoute'])
+angular.module('timeliner', ['ngRoute'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

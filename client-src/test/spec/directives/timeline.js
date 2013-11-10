@@ -1,9 +1,9 @@
 'use strict';
 
-describe('Directive: timeline', function () {
+describe('Directive: viewport', function () {
 
   // load the directive's module
-  beforeEach(module('timelinerApp'));
+  beforeEach(module('timeliner'));
 
   var element,
     scope;
@@ -13,8 +13,8 @@ describe('Directive: timeline', function () {
   }));
 
   it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<timeline></timeline>');
+    element = angular.element('<viewport></viewport>');
     element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the timeline directive');
+    expect(element.text()).toBe('this is the viewport directive');
   }));
 });
