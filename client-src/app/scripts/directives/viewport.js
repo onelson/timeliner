@@ -9,7 +9,7 @@ function Viewport(options) {
         y: options.y || 0
       },
       dragOffset: null,
-      dragSpeed: 0.5
+      dragSpeed: 1
   };
 
   return {
@@ -74,7 +74,6 @@ angular.module('timeliner')
 
       }],
       link: function postLink(scope, element, attrs) {
-        scope.el = element;
       }
     };
   });
