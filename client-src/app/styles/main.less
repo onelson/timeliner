@@ -4,31 +4,35 @@
 
 #content {
   padding: 0 15px;
-
+  @sidebarWidth: 220px;
   .container {
     width: 100%;
-
     sidebar {
       background-color: #a6ae96;
       top:0px;
       left:0px;
       bottom:0px;
       position:absolute;
-      width: 220px;
+      width: @sidebarWidth;
       padding-left: @grid-gutter-width;
     }
 
     viewport {
-      background: #f6f3cf;
+      background-color: #f6f3cf;
       color: #333;
       position: absolute;
       top: 0;
       bottom: 0;
       right: 0;
-      left: 0;
+      left: @sidebarWidth;
       .wrapper {
         width: 100%;
         height: 100%;
+        background-image: url('gridlines.png');
+        background-repeat: repeat repeat;
+        background-position: 0 0;
+        cursor: move;
+        padding: 10px;
       }
     }
   }
