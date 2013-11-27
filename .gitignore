@@ -4,7 +4,7 @@
 local_settings.py
 /.idea
 /*.iml
-/client-src/app/components
+/client-src/app/bower_components
 /client-src/node_modules
 /client-src/dist
 # the main.css is ignored because it's compiled from main.less

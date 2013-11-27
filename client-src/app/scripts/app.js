@@ -1,6 +1,11 @@
 'use strict';
 
-angular.module('timeliner', ['ngRoute'])
+angular.module('timelinerApp', [
+  'ngCookies',
+  'ngResource',
+  'ngSanitize',
+  'ngRoute'
+])
   .config(['$routeProvider', '$logProvider', function ($routeProvider, $logProvider) {
     $logProvider.debugEnabled(true);
     $routeProvider

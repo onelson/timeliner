@@ -3,7 +3,7 @@
 describe('Directive: viewport', function () {
 
   // load the directive's module
-  beforeEach(module('timeliner'));
+  beforeEach(module('timelinerApp'));
 
   var element,
     scope;

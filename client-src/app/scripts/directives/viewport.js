@@ -4,16 +4,14 @@
 function Viewport(options) {
   options = options || {};
   var _ = {
-      pos: {
-        x: options.x || 0,
-        y: options.y || 0
-      },
-      dragOffset: null,
-      dragSpeed: 1
-  };
-
-  return {
-
+    pos: {
+      x: options.x || 0,
+      y: options.y || 0
+    },
+    dragOffset: null,
+    dragSpeed: 1
+  },
+  methods = {
     setDragOffset: function (event) {
       _.dragOffset = {x: event.x, y: event.y};
     },
@@ -33,11 +31,17 @@ function Viewport(options) {
         this.setDragOffset(event);
       }
     }
-
   };
+
+
+  var paper = Raphael(options.container.find('.wrapper')[0]);
+  var circle = paper.circle(50, 40, 10);
+  circle.attr("fill", "#f00");
+  circle.attr("stroke", "#fff");
+  return methods;
 }
 
-angular.module('timeliner')
+angular.module('timelinerApp')
   .directive('viewport', function () {
     return {
       scope: {},
@@ -45,35 +49,34 @@ angular.module('timeliner')
       restrict: 'E',
       controller: ['$scope', '$window', '$log', function($scope, $window, $log) {
 
-        var viewport = new Viewport();
-
-        var pos = viewport.getPos();
-        $scope.bgx = pos.x;
-        $scope.bgy = pos.y;
-
         $scope.press = function mousePress () {
-          viewport.setDragOffset($window.event);
+          $scope.viewport.setDragOffset($window.event);
         };
 
         $scope.release = function mouseRelease () {
-          viewport.stopDrag();
+          $scope.viewport.stopDrag();
         };
 
         /**
          * when dragging, we want to adjust the coords shown in the viewport
          */
         $scope.checkMove = function checkMove () {
-          viewport.updatePos($window.event);
-          if(viewport.isDragging()) {
-            var pos = viewport.getPos();
+          $scope.viewport.updatePos($window.event);
+          if($scope.viewport.isDragging()) {
+            var pos = $scope.viewport.getPos();
             $log.debug(pos);
             $scope.bgx = pos.x;
             $scope.bgy = pos.y;
           }
         };
 
+
+
       }],
       link: function postLink(scope, element, attrs) {
+        scope.viewport = new Viewport({
+          container: element
+        });
       }
     };
   });
